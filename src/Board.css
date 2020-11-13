@@ -1,0 +1,13 @@
+.Board-table {
+  margin: auto;
+  box-shadow: 0px 0px 50px #fff;
+  /* height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.Board-row {
+  width: 1rem;
+  height: 1rem;
+}
