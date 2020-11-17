@@ -15,7 +15,6 @@ class Board extends Component {
       hasWon: false,
       arr: this.createBoard(),
     };
-    // this.flip = this.flip.bind(this);
     this.flipCellsAroundMe = this.flipCellsAroundMe.bind(this);
   }
 
@@ -47,10 +46,12 @@ class Board extends Component {
     flip(x, y + 1);
     flip(x, y - 1);
 
-    this.setState({ arr: arr });
+    //after every click,checking whether all lights are off
+    let isWin = arr.every((row) => row.every((cell) => cell === false));
+    this.setState({ arr: arr, hasWon: isWin });
   }
 
-  render() {
+  makeTable() {
     let loopBoard = [];
     for (let i = 0; i < this.props.trows; i++) {
       let row = [];
@@ -66,12 +67,18 @@ class Board extends Component {
       }
       loopBoard.push(<tr className="Board-row">{row}</tr>);
     }
+  }
 
-    return (
+  render() {
+    return this.state.hasWon ? (
+      <div className="Board">
+        <h1>You Won!!</h1>
+      </div>
+    ) : (
       <div className="Board">
         <h1>BOARD GAME!</h1>
         <table className="Board-table">
-          <tbody>{loopBoard}</tbody>
+          <tbody>{this.makeTable()}</tbody>
         </table>
       </div>
     );
