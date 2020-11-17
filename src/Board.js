@@ -6,7 +6,7 @@ class Board extends Component {
   static defaultProps = {
     trows: 5,
     tcols: 5,
-    chancesLightsStartOn: 0.3,
+    chancesLightsStartOn: 0.25,
   };
 
   constructor(props) {
@@ -39,15 +39,20 @@ class Board extends Component {
     for (let i = 0; i < this.props.trows; i++) {
       let row = [];
       for (let j = 0; j < this.props.tcols; j++) {
-        row.push(<Cell isLit={this.turnLight()} />);
+        row.push(
+          <Cell isLit={this.turnLight()} position={`${i + 1}-${j + 1}`} />
+        );
       }
       loopBoard.push(<tr className="Board-row">{row}</tr>);
     }
 
     return (
-      <table className="Board-table">
-        <tbody>{loopBoard}</tbody>
-      </table>
+      <div className="Board">
+        <h1>BOARD GAME!</h1>
+        <table className="Board-table">
+          <tbody>{loopBoard}</tbody>
+        </table>
+      </div>
     );
   }
 }

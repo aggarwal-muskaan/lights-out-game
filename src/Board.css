@@ -1,10 +1,18 @@
+.Board {
+  background-color: rgb(40, 40, 82);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Board h1 {
+  color: #fff;
+  font-size: 5rem;
+}
+
 .Board-table {
   margin: auto;
   box-shadow: 0px 0px 50px #fff;
-  /* height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; */
 }
 
 .Board-row {
