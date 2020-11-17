@@ -2,8 +2,12 @@
   height: 100px;
   width: 100px;
   background-color: #161113;
-  transition: background-color 0.25s;
+  transition: background-color 1s;
   border-radius: 3px;
+}
+
+.Cell-data:hover {
+  cursor: pointer;
 }
 
 .Cell-data.lit {

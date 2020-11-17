@@ -67,16 +67,23 @@ class Board extends Component {
       }
       loopBoard.push(<tr className="Board-row">{row}</tr>);
     }
+    return loopBoard;
   }
 
   render() {
     return this.state.hasWon ? (
       <div className="Board">
-        <h1>You Won!!</h1>
+        <div className="win-title">
+          <span className="neon">YOU</span>
+          <span className="flux">WON!!</span>
+        </div>
       </div>
     ) : (
       <div className="Board">
-        <h1>BOARD GAME!</h1>
+        <div className="container">
+          <p className="neon">LIGHTS</p>
+          <p className="flux">OUT</p>
+        </div>
         <table className="Board-table">
           <tbody>{this.makeTable()}</tbody>
         </table>
