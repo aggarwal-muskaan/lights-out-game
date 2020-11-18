@@ -1,19 +1,22 @@
 .Board {
-  background-color: rgb(40, 40, 82);
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .Board-table {
   margin: auto;
   box-shadow: 0px 0px 50px #fff;
+  height: auto;
+  width: auto;
 }
 
 .Board-row {
-  width: 1rem;
-  height: 1rem;
+  height: auto;
+  width: auto;
+  /* max-height: 120px; */
+  /* max-width: 600px; */
 }
 
 @font-face {
@@ -29,10 +32,8 @@
 .neon {
   font-family: neon;
   color: #fb4264;
-  font-size: 9vw;
-  /* line-height: 9vw; */
   text-shadow: 0 0 3vw #f40a35;
-
+  font-size: 100px;
   animation: neon 1s ease infinite;
   -moz-animation: neon 1s ease infinite;
   -webkit-animation: neon 1s ease infinite;
@@ -41,8 +42,8 @@
 .flux {
   font-family: neon;
   color: #426dfb;
-  font-size: 9vw;
-  line-height: 9vw;
+  font-size: 100px;
+  /* font-size: calc(60px+ (100-60) * ((100vw-320px) / (1440-320))); */
   text-shadow: 0 0 3vw #2356ff;
 
   animation: flux 2s linear infinite;
@@ -76,5 +77,12 @@
     text-shadow: 0 0 0.5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180,
       0 0 5vw #082180, 0 0 0.2vw #082180, 0.5vw 0.5vw 0.1vw #0a3940;
     color: #146c80;
+  }
+}
+
+@media (max-width: 700px) {
+  .neon,
+  .flux {
+    font-size: 50px;
   }
 }

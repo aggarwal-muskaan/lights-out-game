@@ -1,6 +1,6 @@
 .Cell-data {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   background-color: #161113;
   transition: background-color 1s;
   border-radius: 3px;
@@ -12,4 +12,18 @@
 
 .Cell-data.lit {
   background-color: #fcebf5;
+}
+
+@media (min-width: 500px) {
+  .Cell-data {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media (min-width: 800px) {
+  .Cell-data {
+    height: 100px;
+    width: 100px;
+  }
 }
